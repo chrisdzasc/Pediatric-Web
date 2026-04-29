@@ -90,7 +90,7 @@ function DetallePaciente() {
                         <div className="flex gap-3">
                             <button className="px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center gap-2">Agendar consulta</button>
 
-                            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 flex items-center gap-2">+ Nuevo Medición</button>
+                            <Link to={`/pacientes/${id}/nueva-medicion`} className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 flex items-center gap-2">+ Nueva Medición</Link>
                         </div>
                     </div>
 
