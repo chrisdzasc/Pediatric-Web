@@ -49,13 +49,18 @@ function MainLayout() {
 
             <main className="flex-1 bg-gray-50 overflow-y-auto">
                 <div className="p-6">
-                    <div className="mb-6">
-                        <input
-                            type="text"
-                            placeholder="Buscar paciente..."
-                            className="w-full max-w-md px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
-                        />
-                    </div>
+
+                    {!location.pathname.startsWith("/pacientes/") && (
+                        <div className="mb-6">
+                            <input
+                                type="text"
+                                placeholder="Buscar paciente..."
+                                className="w-full max-w-md px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            />
+                        </div>
+                    )}
+
+
 
                     <Outlet />
                 </div>

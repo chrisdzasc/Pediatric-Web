@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Pacientes from './pages/Pacientes';
+import NuevoPaciente from './pages/NuevoPaciente';
 import DetallePaciente from "./pages/DetallePaciente";
 import './index.css';
 
@@ -15,6 +16,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/pacientes" element={<Pacientes />} />
+          <Route path="/pacientes/nuevo" element={<NuevoPaciente />} />
           <Route path="/pacientes/:id" element={<DetallePaciente />} />
         </Route>
 

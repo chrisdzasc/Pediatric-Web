@@ -35,7 +35,7 @@ function Pacientes() {
             <div className="bg-orange-50 rounded-xl p-6 mb-6 flex justify-between items-center">
                 <h1 className="text-2xl font-bold text-gray-900">Pacientes</h1>
 
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 flex items-center gap-2">+ Nuevo Paciente</button>
+                <Link to={"/pacientes/nuevo"} className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 flex items-center gap-2">+ Nuevo Paciente</Link>
             </div>
 
             <div className="flex items-center gap-4 mb-6">
@@ -95,7 +95,7 @@ function Pacientes() {
                                 <td className="px-6 py-4 text-sm text-gray-600">{p.ultimaConsulta}</td>
 
                                 <td className="px-6 py-4">
-                                    <Link to={`/paciente/${p.id}`} className="text-blue-500 hover:text-blue-700 text-lg">&rarr;</Link>
+                                    <Link to={`/pacientes/${p.id}`} className="text-blue-500 hover:text-blue-700 text-lg">&rarr;</Link>
                                 </td>
                             </tr>
                         ))}

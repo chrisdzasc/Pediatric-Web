@@ -1,0 +1,358 @@
+import { use, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+function NuevoPaciente() {
+    
+    const navigate = useNavigate();
+    const [mostrarOpcionales, setMostrarOpcionales] = useState(false);
+
+    const [nombre, setNombre] = useState("");
+    const [fechaNacimiento, setFechaNacimiento] = useState("");
+    const [sexo, setSexo] = useState("");
+    const [pesoNacer, setPesoNacer] = useState("");
+    const [tallaNacer, setTallaNacer] = useState("");
+
+    const [contactoNombre, setContactoNombre] = useState("");
+    const [parentesco, setParentesco] = useState("");
+    const [telefono, setTelefono] = useState("");
+    const [email, setEmail] = useState("");
+
+    const [fechaConsulta, setFechaConsulta] = useState("");
+    const [peso, setPeso] = useState("");
+    const [talla, setTalla] = useState("");
+    const [perimetroBraquial, setPerimetroBraquial] = useState("");
+
+    const [perimetroCefalico, setPerimetroCefalico] = useState("");
+    const [cintura, setCintura] = useState("");
+    const [abdomen, setAbdomen] = useState("");
+    const [cadera, setCadera] = useState("");
+    const [pantorrilla, setPantorrilla] = useState("");
+
+    const handleGuardar = () => {
+        alert("Paciente guardado! :) (simulación)");
+        navigate("/pacientes");
+    };
+
+    return(
+        <div>
+            <div className="flex items-center justify-between mb-6">
+                <div>
+                    <Link to="/pacientes" className="text-blue-600 text-sm hover:underline mb-4 inline-block">&larr; Volver a Pacientes</Link>
+
+                    <h1 className="text-2xl font-bold text-gray-900">Nuevo Paciente</h1>
+
+                    <p className="text-gray-500 text-sm mt-1">Completa la información clínica básica para iniciar el seguimiento nutricional</p>
+                </div>
+            </div>
+
+            <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                        <span className="text-lg">👤</span>
+                    </div>
+
+                    <div>
+                        <h2 className="text-lg font-bold text-gray-900">Datos del paciente</h2>
+                        <p className="text-sm text-gray-500">Información básica del paciente y contacto parental</p>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="col-span-2 sm:col-span-1">
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Nombre completo <span className="text-red-500">*</span></label>
+                        <input 
+                            type="text" 
+                            value={nombre}
+                            onChange={(e) => setNombre(e.target.value)} 
+                            placeholder="Jose Alberto Gonzalez Ochoa"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Género <span className="text-red-500">*</span></label>
+
+                        <div className="flex gap-2">
+                            <button
+                                type="button"
+                                onClick={() => setSexo("M")}
+                                className={`flex-1 py-2 rounded-lg text-sm font-medium border ${sexo === "M" ? "bg-blue-600 text-white border-blue-600" : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"}`}
+                            >Masculino</button>
+
+                            <button
+                                type="button"
+                                onClick={() => setSexo("F")}
+                                className={`flex-1 py-2 rounded-lg text-sm font-medium border ${sexo === "F" ? "bg-pink-600 text-white border-pink-500" : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"}`}
+                            >Femenino</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Fecha de Nacimiento <span className="text-red-500">*</span></label>
+
+                        <input 
+                            type="date"
+                            value={fechaNacimiento}
+                            onChange={(e) => setFechaNacimiento(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Peso al nacer (kg)</label>
+
+                        <input 
+                            type="number"
+                            step="0.01"
+                            value={pesoNacer}
+                            placeholder="0.00"
+                            onChange={(e) => setPesoNacer(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Talla al nacer (cm)</label>
+
+                        <input 
+                            type="number"
+                            step="0.1"
+                            value={tallaNacer}
+                            placeholder="0.0"
+                            onChange={(e) => setTallaNacer(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                        <span className="text-lg">👨‍👩‍👦</span>
+                    </div>
+
+                    <div>
+                        <h2 className="text-lg font-bold text-gray-900">Contacto Familiar</h2>
+                        <p className="text-sm text-gray-500">Información del tutor</p>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Nombre completo <span className="text-red-500">*</span></label>
+
+                        <input 
+                            type="text" 
+                            value={contactoNombre}
+                            onChange={(e) => setContactoNombre(e.target.value)}
+                            placeholder="Ej. Christian Uriel Diaz Ascencio"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Parentesco <span className="text-erd-500">*</span></label>
+
+                        <select 
+                            value={parentesco}
+                            onChange={(e) => setParentesco(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400 bg-white"
+                        >
+                            <option value="">Seleccionar...</option>
+                            <option value="Madre">Madre</option>
+                            <option value="Padre">Padre</option>
+                            <option value="Tutor">Tutor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Teléfono <span className="text-red-500">*</span></label>
+
+                        <input 
+                            type="tel"
+                            value={telefono}
+                            onChange={(e) => setTelefono(e.target.value)}
+                            placeholder="33 1234 5678"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+
+                        <input 
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="correo@ejemplo.com"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                        <span className="text-lg">📋</span>
+                    </div>
+
+                    <div>
+                        <h2 className="text-lg font-bold text-gray-900">Mediciones primera consulta</h2>
+
+                        <p className="text-sm text-gray-500">Datos de la primera consulta</p>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label className="bloc text-sm font-medium text-gray-700 mb-1">Fecha de consulta <span className="text-red-500">*</span></label>
+
+                        <input 
+                            type="date"
+                            value={fechaConsulta}
+                            onChange={(e) => setFechaConsulta(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Peso (kg) <span className="text-red-500">*</span></label>
+
+                        <input 
+                            type="number"
+                            step="0.01"
+                            value={peso}
+                            onChange={(e) => setPeso(e.target.value)}
+                            placeholder="0.00"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Talla (cm) <span className="text-red-500">*</span></label>
+
+                        <input 
+                            type="number"
+                            step="0.1"
+                            value={talla}
+                            onChange={(e) => setTalla(e.target.value)}
+                            placeholder="0.0"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+                </div>
+
+                <div className="mb-4">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Perímetro braquial (cm) <span className="text-red-500">*</span></label>
+
+                        <input 
+                            type="number"
+                            step="0.1"
+                            value={perimetroBraquial}
+                            onChange={(e) => setPerimetroBraquial(e.target.value)}
+                            placeholder="0.0"
+                            className="w-full max-w-xs px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    onClick={() => setMostrarOpcionales(!mostrarOpcionales)}
+                    className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 font-medium mt-2"
+                >
+                    <span>{mostrarOpcionales ? "▼" : "▶"}</span>
+                    Mediciones Opcionales
+                </button>
+
+                {mostrarOpcionales && (
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                        <div className="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Perímetro Cefálico (cm)</label>
+
+                                <input 
+                                    type="number"
+                                    step="0.1"
+                                    value={perimetroCefalico}
+                                    onChange={(e) => setPerimetroCefalico(e.target.value)}
+                                    placeholder="0.0"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Cintura (cm)</label>
+
+                                <input 
+                                    type="number"
+                                    step="0.1"
+                                    value={cintura}
+                                    onChange={(e) => setCintura(e.target.value)}
+                                    placeholder="0.0"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Abdomen (cm)</label>
+
+                                <input 
+                                    type="number"
+                                    step="0.1"
+                                    value={abdomen}
+                                    onChange={(e) => setAbdomen(e.target.value)}
+                                    placeholder="0.0"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Cadera (cm)</label>
+
+                                <input 
+                                    type="number"
+                                    step="0.1"
+                                    value={cadera}
+                                    onChange={(e) => setCadera(e.target.value)}
+                                    placeholder="0.0"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Pantorrilla (cm)</label>
+
+                                <input 
+                                    type="number"
+                                    step="0.1"
+                                    value={pantorrilla}
+                                    onChange={(e) => setPantorrilla(e.target.value)}
+                                    placeholder="0.0"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            <div className="flex justify-end gap-3 mb-8">
+                <Link to="/pacientes" className="px-6 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Cancelar</Link>
+
+                <button onClick={handleGuardar} className="px-6 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">Guardar Paciente</button>
+            </div>
+        </div>
+    );
+}
+
+export default NuevoPaciente;
