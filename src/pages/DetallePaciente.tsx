@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import ModalAgregarConsulta from "../components/ModalAgregarConsulta";
 
 interface Medicion {
     fecha: string;
@@ -32,6 +33,7 @@ const pacienteEjemplo = {
 function DetallePaciente() {
     const { id } = useParams();
     const [tabActiva, setTabActiva] = useState("Mediciones");
+    const [modalAbierto, setModalAbierto] = useState(false);
     const paciente = pacienteEjemplo;
 
     const tabs = ["Mediciones", "Graficas", "Alimentacion"];
@@ -88,7 +90,7 @@ function DetallePaciente() {
                         <h2 className="text-lg font-bold text-gray-900">Historial de Crecimiento</h2>
 
                         <div className="flex gap-3">
-                            <button className="px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center gap-2">Agendar consulta</button>
+                            <button onClick={() => setModalAbierto(true)} className="px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center gap-2">Agendar consulta</button>
 
                             <Link to={`/pacientes/${id}/nueva-medicion`} className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 flex items-center gap-2">+ Nueva Medición</Link>
                         </div>
@@ -150,7 +152,11 @@ function DetallePaciente() {
                 </div>
             )}
 
-
+            <ModalAgregarConsulta
+                pacienteNombre={paciente.nombre}
+                isOpen={modalAbierto}
+                onClose={() => setModalAbierto(false)}
+            />
         </div>
     );
 }

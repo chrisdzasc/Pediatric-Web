@@ -1,0 +1,101 @@
+import { useState } from "react";
+
+interface ModalAgregarConsultaProps {
+    pacienteNombre: string;
+    isOpen: boolean;
+    onClose: () => void;
+}
+
+function ModalAgregarConsulta({ pacienteNombre, isOpen, onClose }: ModalAgregarConsultaProps) {
+
+    const [fecha, setFecha] = useState("");
+    const [hora, setHora] = useState("");
+
+    if(!isOpen) return null;
+
+    const handleAgendar = () => {
+        alert(`Consulta agendada para ${pacienteNombre} el ${fecha} a las ${hora} (por ahora solo simula)`);
+
+        setFecha("");
+        setHora("");
+        onClose();
+    };
+
+    return(
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+            <div className="fixed inset-0 bg-black/50" onClick={onClose}></div>
+
+            <div className="bg-white rounded-xl shadow-lg w-full max-w-lg p-6 relative z-10">
+                <h2 className="text-xl font-bold text-gray-900 mb-2">Agendar Consulta</h2>
+
+                <p className="text-sm text-gray-500 mb-6">Selecciona día y hora para agendar una nueva consulta</p>
+
+                <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Paciente</label>
+
+                    <input 
+                        type="text"
+                        value={pacienteNombre}
+                        disabled
+                        className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-gray-50 text-gray-500"
+                    />
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Fecha <span className="text-red-500">*</span></label>
+
+                        <input 
+                            type="date"
+                            value={fecha}
+                            onChange={(e) => {
+                                const hoy = new Date().toISOString().split("T")[0];
+
+                                if(e.target.value >= hoy) {
+                                    setFecha(e.target.value);
+                                }
+                            }}
+                            min={new Date().toISOString().split("T")[0]}
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Hora <span className="text-red-500">*</span></label>
+
+                        <select
+                            value={hora}
+                            onChange={(e) => setHora(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400 bg-white"
+                        >
+                            <option value="">--Seleccionar Hora--</option>
+                            {Array.from({ length: 14 }, (_, i) => 9 + i).map((h) => 
+                                ["00", "30"].map((m) => {
+                                    const valor = `${String(h).padStart(2, "0")}:${m}`;
+
+                                    return (
+                                        <option key={valor} value={valor}>{valor}</option>
+                                    );
+                                })
+                            )}
+                        </select>
+                    </div>
+                </div>
+
+                <div className="flex justify-end gap-3">
+                    <button
+                        onClick={onClose}
+                        className="px-6 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
+                    >Cancelar</button>
+
+                    <button
+                        onClick={handleAgendar}
+                        className="px-6 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700"
+                    >Agendar consulta</button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default ModalAgregarConsulta;
