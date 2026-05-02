@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Consulta {
     hora: string;
@@ -92,7 +93,7 @@ function Dashboard() {
                                 </td>
 
                                 <td className="px-6 py-4">
-                                    <button className="text-blue-500 hover:text-blue-700 text-lg">&rarr;</button>
+                                    <Link to={`/pacientes/${i + 1}`} className="text-blue-500 hover:text-blue-700 text-lg">&rarr;</Link>
                                 </td>
                             </tr>
                         ))}
