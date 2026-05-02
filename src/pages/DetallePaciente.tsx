@@ -40,11 +40,11 @@ function DetallePaciente() {
 
     return (
         <div>
-            <Link to="/pacientes" className="text-blue-600 text-sm hover:underline mb-4 inline-block">&larr; Volver a Pacientes</Link>
+            <Link to="/pacientes" className="text-teal-600 text-sm hover:underline mb-4 inline-block">&larr; Volver a Pacientes</Link>
 
             <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
                 <div className="flex items-center gap-6">
-                    <div className={`w-16 h-16 rounded-full flex items-center justify-center text-lg font-bold ${ paciente.sexo === "F" ? "bg-pink-100 text-pink-600" : "bg-blue-100 text-blue-600" }`}>{paciente.iniciales}</div>
+                    <div className={`w-16 h-16 rounded-full flex items-center justify-center text-lg font-bold ${ paciente.sexo === "F" ? "bg-pink-100 text-pink-600" : "bg-teal-100 text-teal-600" }`}>{paciente.iniciales}</div>
 
                     <div>
                         <h1 className="text-2xl font-bold text-gray-900">{paciente.nombre}</h1>
@@ -60,7 +60,7 @@ function DetallePaciente() {
                         <div>
                             <p className="text-xs text-gray-500 uppercase font-medium">Edad Actual</p>
 
-                            <p className="text-sm text-blue-600 mt-1">{paciente.edad}</p>
+                            <p className="text-sm text-teal-600 mt-1">{paciente.edad}</p>
                         </div>
 
                         <div>
@@ -77,7 +77,7 @@ function DetallePaciente() {
                     <button
                         key={tab}
                         onClick={() => setTabActiva(tab)}
-                        className={`pb-3 text-sm font-medium ${ tabActiva === tab ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-500 hover:text-gray-700" }`}
+                        className={`pb-3 text-sm font-medium ${ tabActiva === tab ? "text-teal-600 border-b-2 border-teal-600" : "text-gray-500 hover:text-gray-700" }`}
                     >
                         {tab}
                     </button>
@@ -92,7 +92,7 @@ function DetallePaciente() {
                         <div className="flex gap-3">
                             <button onClick={() => setModalAbierto(true)} className="px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center gap-2">Agendar consulta</button>
 
-                            <Link to={`/pacientes/${id}/nueva-medicion`} className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 flex items-center gap-2">+ Nueva Medición</Link>
+                            <Link to={`/pacientes/${id}/nueva-medicion`} className="px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 flex items-center gap-2">+ Nueva Medición</Link>
                         </div>
                     </div>
 
@@ -124,7 +124,7 @@ function DetallePaciente() {
                                         <td className="px-6 py-4 text-sm text-gray-600">{m.perimetroCm}</td>
 
                                         <td className="px-6 py-4">
-                                            <button className="text-blue-500 hover:text-blue-700 text-lg">&rarr;</button>
+                                            <button className="text-teal-500 hover:text-teal-700 text-lg">&rarr;</button>
                                         </td>
                                     </tr>
                                 ))}

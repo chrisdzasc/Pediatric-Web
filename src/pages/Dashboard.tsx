@@ -28,7 +28,7 @@ function Dashboard() {
                 return "bg-gray-100 text-gray-700";
             
             case "En curso":
-                return "bg-blue-100 text-blue-700";
+                return "bg-teal-100 text-teal-700";
 
             case "Pendiente":
                 return "bg-orange-100 text-orange-700";
@@ -40,7 +40,7 @@ function Dashboard() {
 
     return (
         <div>
-            <div className="bg-blue-50 rounded-xl p-6 mb-6 flex justify-between items-center">
+            <div className="bg-teal-50 rounded-xl p-6 mb-6 flex justify-between items-center">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900">Buenos días, Dr. Alberto Gonzalez</h1>
 
@@ -50,7 +50,7 @@ function Dashboard() {
                 <div className="flex items-center gap-3 bg-white rounded-lg px-4
                 py-2 border border-gray-200">
                     <button className="text-gray-400 hover:text-gray-600">&lt;</button>
-                    <span className="text-sm font-medium text-blue-600">{fecha}</span>
+                    <span className="text-sm font-medium text-teal-600">{fecha}</span>
                     <button className="text-gray-400 hover:text-gray-600">&gt;</button>
                 </div>
 
@@ -74,13 +74,13 @@ function Dashboard() {
 
                     <tbody>
                         {consultasHoy.map((c, i) => (
-                            <tr key={i} className={`border-b border-gray-50 hover:bg-gray-50 cursor-pointer ${c.estado === "En curso" ? "bg-blue-50/50" : ""}`}>
+                            <tr key={i} className={`border-b border-gray-50 hover:bg-gray-50 cursor-pointer ${c.estado === "En curso" ? "bg-teal-50/50" : ""}`}>
 
-                                <td className={`px-6 py-4 text-sm ${ c.estado === "En curso" ? "text-blue-600 font-medium" : "text-gray-600" }`}>{c.hora}</td>
+                                <td className={`px-6 py-4 text-sm ${ c.estado === "En curso" ? "text-teal-600 font-medium" : "text-gray-600" }`}>{c.hora}</td>
 
                                 <td className="px-6 py-4">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-[11px] font-bold">{c.iniciales}</div>
+                                        <div className="w-8 h-8 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-[11px] font-bold">{c.iniciales}</div>
 
                                         <span className={`text-sm ${ c.estado === "En curso" ? "font-medium text-gray-900" : "text-gray-700" }`}>{c.nombre}</span>
                                     </div>
@@ -93,7 +93,7 @@ function Dashboard() {
                                 </td>
 
                                 <td className="px-6 py-4">
-                                    <Link to={`/pacientes/${i + 1}`} className="text-blue-500 hover:text-blue-700 text-lg">&rarr;</Link>
+                                    <Link to={`/pacientes/${i + 1}`} className="text-teal-500 hover:text-teal-700 text-lg">&rarr;</Link>
                                 </td>
                             </tr>
                         ))}

@@ -37,7 +37,7 @@ function NuevoPaciente() {
         <div>
             <div className="flex items-center justify-between mb-6">
                 <div>
-                    <Link to="/pacientes" className="text-blue-600 text-sm hover:underline mb-4 inline-block">&larr; Volver a Pacientes</Link>
+                    <Link to="/pacientes" className="text-teal-600 text-sm hover:underline mb-4 inline-block">&larr; Volver a Pacientes</Link>
 
                     <h1 className="text-2xl font-bold text-gray-900">Nuevo Paciente</h1>
 
@@ -47,7 +47,7 @@ function NuevoPaciente() {
 
             <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
                 <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center">
                         <span className="text-lg">👤</span>
                     </div>
 
@@ -65,7 +65,7 @@ function NuevoPaciente() {
                             value={nombre}
                             onChange={(e) => setNombre(e.target.value)} 
                             placeholder="Jose Alberto Gonzalez Ochoa"
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
 
@@ -76,7 +76,7 @@ function NuevoPaciente() {
                             <button
                                 type="button"
                                 onClick={() => setSexo("M")}
-                                className={`flex-1 py-2 rounded-lg text-sm font-medium border ${sexo === "M" ? "bg-blue-600 text-white border-blue-600" : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"}`}
+                                className={`flex-1 py-2 rounded-lg text-sm font-medium border ${sexo === "M" ? "bg-teal-600 text-white border-teal-600" : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"}`}
                             >Masculino</button>
 
                             <button
@@ -96,7 +96,7 @@ function NuevoPaciente() {
                             type="date"
                             value={fechaNacimiento}
                             onChange={(e) => setFechaNacimiento(e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
 
@@ -109,7 +109,7 @@ function NuevoPaciente() {
                             value={pesoNacer}
                             placeholder="0.00"
                             onChange={(e) => setPesoNacer(e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
 
@@ -122,7 +122,7 @@ function NuevoPaciente() {
                             value={tallaNacer}
                             placeholder="0.0"
                             onChange={(e) => setTallaNacer(e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
                 </div>
@@ -130,7 +130,7 @@ function NuevoPaciente() {
 
             <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
                 <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center">
                         <span className="text-lg">👨‍👩‍👦</span>
                     </div>
 
@@ -149,7 +149,7 @@ function NuevoPaciente() {
                             value={contactoNombre}
                             onChange={(e) => setContactoNombre(e.target.value)}
                             placeholder="Ej. Christian Uriel Diaz Ascencio"
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
 
@@ -159,7 +159,7 @@ function NuevoPaciente() {
                         <select 
                             value={parentesco}
                             onChange={(e) => setParentesco(e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400 bg-white"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400 bg-white"
                         >
                             <option value="">Seleccionar...</option>
                             <option value="Madre">Madre</option>
@@ -178,7 +178,7 @@ function NuevoPaciente() {
                             value={telefono}
                             onChange={(e) => setTelefono(e.target.value)}
                             placeholder="33 1234 5678"
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
 
@@ -190,7 +190,7 @@ function NuevoPaciente() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="correo@ejemplo.com"
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
                 </div>
@@ -198,7 +198,7 @@ function NuevoPaciente() {
 
             <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
                 <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center">
                         <span className="text-lg">📋</span>
                     </div>
 
@@ -217,7 +217,7 @@ function NuevoPaciente() {
                             type="date"
                             value={fechaConsulta}
                             onChange={(e) => setFechaConsulta(e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
 
@@ -230,7 +230,7 @@ function NuevoPaciente() {
                             value={peso}
                             onChange={(e) => setPeso(e.target.value)}
                             placeholder="0.00"
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
 
@@ -243,7 +243,7 @@ function NuevoPaciente() {
                             value={talla}
                             onChange={(e) => setTalla(e.target.value)}
                             placeholder="0.0"
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
                 </div>
@@ -258,7 +258,7 @@ function NuevoPaciente() {
                             value={perimetroBraquial}
                             onChange={(e) => setPerimetroBraquial(e.target.value)}
                             placeholder="0.0"
-                            className="w-full max-w-xs px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full max-w-xs px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
                 </div>
@@ -266,7 +266,7 @@ function NuevoPaciente() {
                 <button
                     type="button"
                     onClick={() => setMostrarOpcionales(!mostrarOpcionales)}
-                    className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 font-medium mt-2"
+                    className="flex items-center gap-2 text-sm text-teal-600 hover:text-teal-800 font-medium mt-2"
                 >
                     <span>{mostrarOpcionales ? "▼" : "▶"}</span>
                     Mediciones Opcionales
@@ -284,7 +284,7 @@ function NuevoPaciente() {
                                     value={perimetroCefalico}
                                     onChange={(e) => setPerimetroCefalico(e.target.value)}
                                     placeholder="0.0"
-                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                                 />
                             </div>
 
@@ -297,7 +297,7 @@ function NuevoPaciente() {
                                     value={cintura}
                                     onChange={(e) => setCintura(e.target.value)}
                                     placeholder="0.0"
-                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                                 />
                             </div>
                         </div>
@@ -312,7 +312,7 @@ function NuevoPaciente() {
                                     value={abdomen}
                                     onChange={(e) => setAbdomen(e.target.value)}
                                     placeholder="0.0"
-                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                                 />
                             </div>
 
@@ -325,7 +325,7 @@ function NuevoPaciente() {
                                     value={cadera}
                                     onChange={(e) => setCadera(e.target.value)}
                                     placeholder="0.0"
-                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                                 />
                             </div>
 
@@ -338,7 +338,7 @@ function NuevoPaciente() {
                                     value={pantorrilla}
                                     onChange={(e) => setPantorrilla(e.target.value)}
                                     placeholder="0.0"
-                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                                    className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                                 />
                             </div>
                         </div>
@@ -349,7 +349,7 @@ function NuevoPaciente() {
             <div className="flex justify-end gap-3 mb-8">
                 <Link to="/pacientes" className="px-6 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Cancelar</Link>
 
-                <button onClick={handleGuardar} className="px-6 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">Guardar Paciente</button>
+                <button onClick={handleGuardar} className="px-6 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700">Guardar Paciente</button>
             </div>
         </div>
     );

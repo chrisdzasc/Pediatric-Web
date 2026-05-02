@@ -56,7 +56,7 @@ function ModalAgregarConsulta({ pacienteNombre, isOpen, onClose }: ModalAgregarC
                                 }
                             }}
                             min={new Date().toISOString().split("T")[0]}
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400"
                         />
                     </div>
 
@@ -66,7 +66,7 @@ function ModalAgregarConsulta({ pacienteNombre, isOpen, onClose }: ModalAgregarC
                         <select
                             value={hora}
                             onChange={(e) => setHora(e.target.value)}
-                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400 bg-white"
+                            className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400 bg-white"
                         >
                             <option value="">--Seleccionar Hora--</option>
                             {Array.from({ length: 14 }, (_, i) => 9 + i).map((h) => 
@@ -90,7 +90,7 @@ function ModalAgregarConsulta({ pacienteNombre, isOpen, onClose }: ModalAgregarC
 
                     <button
                         onClick={handleAgendar}
-                        className="px-6 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700"
+                        className="px-6 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700"
                     >Agendar consulta</button>
                 </div>
             </div>

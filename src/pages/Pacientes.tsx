@@ -35,7 +35,7 @@ function Pacientes() {
             <div className="bg-orange-50 rounded-xl p-6 mb-6 flex justify-between items-center">
                 <h1 className="text-2xl font-bold text-gray-900">Pacientes</h1>
 
-                <Link to={"/pacientes/nuevo"} className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 flex items-center gap-2">+ Nuevo Paciente</Link>
+                <Link to={"/pacientes/nuevo"} className="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-teal-700 flex items-center gap-2">+ Nuevo Paciente</Link>
             </div>
 
             <div className="flex items-center gap-4 mb-6">
@@ -44,7 +44,7 @@ function Pacientes() {
                         <button
                             key={f}
                             onClick={() => setFiltro(f)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium ${ filtro === f ? "bg-blue-600 text-white" : "bg-white text-gray-600 border border-gray-200 hover:bg-gray-50" }`}
+                            className={`px-4 py-2 rounded-full text-sm font-medium ${ filtro === f ? "bg-teal-600 text-white" : "bg-white text-gray-600 border border-gray-200 hover:bg-gray-50" }`}
                         >{f}</button>
                     ))}
                 </div>
@@ -54,7 +54,7 @@ function Pacientes() {
                     placeholder="Filtrar por nombre..."
                     value={busqueda}
                     onChange={(e) => setBusqueda(e.target.value)}
-                    className="ml-auto px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-400 w-64"
+                    className="ml-auto px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-teal-400 w-64"
                  />
             </div>
 
@@ -79,7 +79,7 @@ function Pacientes() {
                             <tr key={p.id} className="border-b border-gray-50 hover:bg-gray-50 cursor-pointer">
                                 <td className="px-6 py-4">
                                     <div className="flex items-center gap-3">
-                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold ${ p.sexo === "M" ? "bg-blue-100 text-blue-600" : "bg-pink-100 text-pink-600" }`}>{p.iniciales}
+                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold ${ p.sexo === "M" ? "bg-teal-100 text-teal-600" : "bg-pink-100 text-pink-600" }`}>{p.iniciales}
                                         </div>
 
                                         <span className="text-sm text-gray-700">{p.nombre}</span>
@@ -89,13 +89,13 @@ function Pacientes() {
                                 <td className="px-6 py-4 text-sm text-gray-600">{p.edad}</td>
 
                                 <td className="px-6 py-4">
-                                    <span className={`text-xs font-medium px-2 py-1 rounded-full ${ p.sexo === "M" ? "bg-blue-100 text-blue-700" : "bg-pink-100 text-pink-700" }`}>{p.sexo}</span>
+                                    <span className={`text-xs font-medium px-2 py-1 rounded-full ${ p.sexo === "M" ? "bg-teal-100 text-teal-700" : "bg-pink-100 text-pink-700" }`}>{p.sexo}</span>
                                 </td>
 
                                 <td className="px-6 py-4 text-sm text-gray-600">{p.ultimaConsulta}</td>
 
                                 <td className="px-6 py-4">
-                                    <Link to={`/pacientes/${p.id}`} className="text-blue-500 hover:text-blue-700 text-lg">&rarr;</Link>
+                                    <Link to={`/pacientes/${p.id}`} className="text-teal-500 hover:text-teal-700 text-lg">&rarr;</Link>
                                 </td>
                             </tr>
                         ))}
@@ -108,7 +108,7 @@ function Pacientes() {
                     <div className="flex gap-2">
                         <button className="px-3 py-1 text-sm border border-gray-200 rounded-lg text-gray-500 hover:bg-gray-50">&lt;</button>
 
-                        <button className="px-3 py-1 text-sm bg-blue-600 text-white rounded-lg">1</button>
+                        <button className="px-3 py-1 text-sm bg-teal-600 text-white rounded-lg">1</button>
 
                         <button className="px-3 py-1 text-sm border border-gray-200 rounded-lg text-gray-500 hover:bg-gray-50">2</button>
 
