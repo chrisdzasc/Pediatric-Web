@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fadeSlideUp {
+    0%   { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+  
+@keyframes lineGrow {
+    0%   { transform: scaleY(0); opacity: 0; }
+    100% { transform: scaleY(1); opacity: 1; }
+}
+  
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.45); }
+    50%      { box-shadow: 0 0 0 8px rgba(13, 148, 136, 0); }
+}
+  
+.timeline-line {
+    transform-origin: top center;
+    animation: lineGrow 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+  
+.animate-stagger-card {
+    opacity: 0;
+    animation: fadeSlideUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+  
+.pulse-active-node {
+    animation: pulseGlow 2.2s infinite ease-in-out;
+}
+  
+@media (prefers-reduced-motion: reduce) {
+    .animate-stagger-card,
+    .timeline-line,
+    .pulse-active-node {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
